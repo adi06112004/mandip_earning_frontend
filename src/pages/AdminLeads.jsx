@@ -11,7 +11,7 @@ const AdminLeads = () => {
   if (!token) {
     window.location.href = "/admin"; // redirect if not logged in
   }
-    axios.get(`http://localhost:5000/api/admin/submissions/${id}`,{
+    axios.get(`https://mandip-backend.onrender.com/api/admin/submissions/${id}`,{
        headers: {
     Authorization: `Bearer ${sessionStorage.getItem("adminToken")}`
   }
