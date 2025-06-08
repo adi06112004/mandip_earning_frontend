@@ -19,7 +19,7 @@ const BlogAdmin = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/blogs/all');
+      const res = await axios.get('https://mandip-backend.onrender.com/api/blogs/all');
       if (Array.isArray(res.data)) {
         setBlogs(res.data);
       } else {
@@ -46,7 +46,7 @@ const BlogAdmin = () => {
   e.preventDefault();
   try {
     await axios.post(
-      'http://localhost:5000/api/blogs/add',
+      'https://mandip-backend.onrender.com/api/blogs/add',
       {
         title,
         description: desc,
@@ -75,7 +75,7 @@ const BlogAdmin = () => {
  const handleDelete = async (id) => {
   try {
     await axios.delete(
-      `http://localhost:5000/api/blogs/delete/${id}`,
+      `https://mandip-backend.onrender.com/api/blogs/delete/${id}`,
       {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("adminToken")}`,
