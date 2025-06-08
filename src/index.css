@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;  /* allow vertical scroll */
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #0f0f0f, #1e1e1e, #292929, #0a0a0a);
+  background-size: 400% 400%;
+  animation: bgAnimate 15s ease infinite;
+  position: relative;
+  /* Removed overflow: hidden; so scroll works */
+}
+
+@keyframes bgAnimate {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Full screen starfield */
+body::before {
+  content: "";
+  position: fixed;  /* stays fixed on viewport */
+  top: 0;
+  left: 0;
+  width: 100vw;    /* full viewport width */
+  height: 100vh;   /* full viewport height */
+  pointer-events: none;
+  z-index: 0;
+  background: transparent;
+
+  border-radius: 50%; /* optional for smooth edges */
+
+  box-shadow:
+    10vw 20vh white,
+    15vw 50vh white,
+    30vw 10vh white,
+    45vw 70vh white,
+    60vw 40vh white,
+    75vw 80vh white,
+    80vw 30vh white,
+    85vw 60vh white,
+    90vw 20vh white,
+    95vw 50vh white,
+
+    5vw 10vh #ccc,
+    20vw 40vh #ddd,
+    35vw 60vh #eee,
+    50vw 15vh #bbb,
+    65vw 35vh #fff,
+    70vw 55vh #ddd,
+    85vw 75vh #ccc,
+    90vw 85vh #eee,
+    95vw 95vh #bbb,
+    98vw 25vh #fff;
+
+  width: 2px;  /* size of each star */
+  height: 2px;
+  border-radius: 50%;  /* make stars circular */
+
+  animation: twinkle 3s infinite alternate ease-in-out;
+}
+
+@keyframes twinkle {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
