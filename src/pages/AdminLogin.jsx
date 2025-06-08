@@ -8,7 +8,7 @@ const AdminLogin = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/admin/login", { email, password });
+      const res = await axios.post("https://mandip-backend.onrender.com/api/admin/login", { email, password });
       sessionStorage.setItem("adminToken", res.data.token);
       alert("✅ Login Successful");
       window.location.href = "/admin/dashboard";
