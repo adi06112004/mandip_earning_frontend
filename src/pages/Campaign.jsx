@@ -11,7 +11,7 @@ const Campaign = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/campaign/${id}`)
+      .get(`https://mandip-backend.onrender.com/api/campaign/${id}`)
       .then((res) => setCampaign(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -41,7 +41,7 @@ const Campaign = () => {
     if (!validate()) return;
 
     axios
-      .post("http://localhost:5000/api/submit", {
+      .post("https://mandip-backend.onrender.com/api/submit", {
         ...form,
         campaignId: id,
         linkedCampaign: campaign._id,
