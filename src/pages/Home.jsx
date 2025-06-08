@@ -10,7 +10,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/campaigns")
+      .get("https://mandip-backend.onrender.com/api/campaigns")
       .then((res) => setCampaigns(res.data))
       .catch((err) => console.error(err));
   }, []);
