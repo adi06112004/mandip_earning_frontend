@@ -10,7 +10,7 @@ const BlogHome = () => {
 
   const fetchBlogs = async (page) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/blogs?page=${page}`);
+      const res = await axios.get(`https://mandip-backend.onrender.com/api/blogs?page=${page}`);
       setBlogs(res.data.blogs);
       setTotalPages(res.data.totalPages);
     } catch (err) {
