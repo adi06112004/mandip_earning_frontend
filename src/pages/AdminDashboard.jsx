@@ -11,7 +11,7 @@ const AdminDashboard = () => {
   const [campaignId, setCampaignId] = useState("");
 
   const fetchCampaigns = () => {
-    axios.get("http://localhost:5000/api/campaigns").then((res) => setCampaigns(res.data));
+    axios.get("https://mandip-backend.onrender.com/api/campaigns").then((res) => setCampaigns(res.data));
   };
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const AdminDashboard = () => {
 
   try {
     await axios.post(
-      "http://localhost:5000/api/admin/campaign",
+      "https://mandip-backend.onrender.com/api/admin/campaign",
       {
         campaignId,
         title,
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
 const deleteCampaign = async (id) => {
   try {
     await axios.delete(
-      `http://localhost:5000/api/admin/campaign/${id}`,
+      `https://mandip-backend.onrender.com/api/admin/campaign/${id}`,
       {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("adminToken")}`,
