@@ -7,7 +7,7 @@ const AllBlogs = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/blogs/all");
+      const res = await axios.get("https://mandip-backend.onrender.com/api/blogs/all");
       setBlogs(res.data.blogs || res.data); // Adjust if API returns differently
     } catch (err) {
       console.error("Error fetching blogs:", err);
