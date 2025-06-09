@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 html, body {
-  height: 100%;
+/*   height: 100%; */
   margin: 0;
   padding: 0;
   overflow-y: auto;  /* allow vertical scroll */
@@ -31,11 +31,11 @@ body {
 /* Full screen starfield */
 body::before {
   content: "";
-/*   position: fixed;  /* stays fixed on viewport */ */
+  position: fixed;  /* stays fixed on viewport */
   top: 0;
   left: 0;
-/*   width: 100vw;    /* full viewport width */ */
-/*   height: 100vh;   /* full viewport height */ */
+  width: 100vw;    /* full viewport width */
+  height: 100vh;   /* full viewport height */
   pointer-events: none;
   z-index: 0;
   background: transparent;
