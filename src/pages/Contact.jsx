@@ -14,10 +14,10 @@ const Contact = () => {
             <div>
               <p className="text-sm text-gray-400">Email us at</p>
               <a
-                href="mailto:support@yourdomain.com"
+                href="mailto:skrajktr222@gmail.com"
                 className="text-white font-medium hover:underline"
               >
-                support@yourdomain.com
+                skrajktr222@gmail.com
               </a>
             </div>
           </div>
